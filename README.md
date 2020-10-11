@@ -4,4 +4,4 @@ https://cloth-store.netlify.app/
 
 ### `App Info`
 
-Pug / SCSS / CSS Grid
+Pug / SCSS / Grid Layout
