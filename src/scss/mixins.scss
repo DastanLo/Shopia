@@ -1,0 +1,23 @@
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+};
+@mixin toCenter ($columnAmt, $columnVal, $rowAmt, $rowVal) {
+  display: grid;
+  grid-template-columns: repeat($columnAmt, $columnVal);
+  grid-template-rows: repeat($rowAmt, $rowVal);
+}
+@mixin flexCenter ($display, $horizontal, $vertical, $direction) {
+  display: $display;
+  justify-content: $horizontal;
+  align-items: $vertical;
+  flex-direction: $direction;
+}
+@mixin backgroundImage($color, $repeat, $image, $size, $position) {
+  background-color: $color;
+  background-image: $image;
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+}

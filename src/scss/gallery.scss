@@ -1,0 +1,128 @@
+.gallery-title {
+  margin-top: 40px;
+  @include toCenter(3, 1fr, 1, 1fr);
+  align-items: center;
+  grid-gap: 20px;
+
+  &__line {
+    height: 1px;
+    background-color: $gallery_line_bg;
+  }
+
+  .square {
+    width: 20px;
+    height: 20px;
+    background-color: $header_social_link_border_color;
+    transform: rotate(45deg);
+  }
+
+  &__text {
+    width: 100%;
+    justify-self: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    h5 {
+      margin: 0 20px;
+      font-style: italic;
+      font-family: "Playfair Display", sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.gallery {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-items: center;
+  grid-gap: 15px;
+
+  &__item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bg-item {
+    grid-row: span 2;
+  }
+}
+
+.summer-gallery {
+  margin-top: 40px;
+  color: #fff;
+  font-family: Lato, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  grid-gap: 15px;
+
+  &__item {
+    position: relative;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      cursor: pointer;
+      left: calc(50% - 90px);
+      border-bottom: 35px solid #000000;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      width: 120px;
+    }
+
+    &:hover:after {
+      border-bottom: 35px solid #f0975c;
+    }
+  }
+
+  &__discount {
+    max-width: 60px;
+    width: 100%;
+    height: 100%;
+    max-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $discount_bg;
+    border-radius: 50%;
+    vertical-align: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 23px;
+  }
+  &__button {
+    z-index: 100;
+    text-align: center;
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 35px);
+    cursor: pointer;
+  }
+}
+
+
+@media screen and (max-width: 880px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (max-width: 644px) {
+  .summer-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}

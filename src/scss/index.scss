@@ -1,0 +1,42 @@
+@import "~normalize.css";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import '~swiper/swiper-bundle.min.css';
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "header";
+@import "promo";
+@import "gallery";
+@import "brand&review";
+@import "footer";
+*{
+  box-sizing: border-box;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.wrapper {
+  display: grid;
+  grid-template: minmax(140px, auto) minmax(692px, auto) 1fr minmax(400px, auto)/ 1fr;
+  grid-gap: 16px;
+}
+
+@media screen and (max-width: 860px){
+  .wrapper {
+    grid-template: minmax(40px, auto) minmax(400px, auto) 1fr minmax(400px, auto)/ 1fr;
+    grid-gap: 0;
+  }
+  :root {
+    font-size: 10px;
+  }
+}
